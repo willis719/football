@@ -5,7 +5,7 @@ from plays import Plays
 
 name = input("What's your name? ")
 print(f"Hey {name} you are the new quarterback of this team.")
-print("You have one final drive to win this game you are down 5 so we need a touchdown.")
+print("You have one final drive to win this game you are down 5 at the 50 yard line so we need a touchdown.")
 print("You are running onto the field and get into the huddle...")
 
 
@@ -22,25 +22,22 @@ def start():
     play = int(input("> "))
 
     if play == 1:
-        Plays.play_one("pass")
+        Plays.play_one("Deep Pass")
     if play == 2:
-        Plays.play_two("run left")
+        Plays.play_two("Run Right")
     if play == 3:
-        Plays.play_three("run right")
+        Plays.play_three("Run Left")
     if play == 4:
-        Plays.play_four("quick pass")
+        Plays.play_four("Quick Pass")
 
 start.counter = 0
     
-
-
-
-    
+ 
 while sum(Plays.yards) <= 50:
     if sum(Plays.yards) >= 50 or Plays.yards_left <= 0:
         print("Touchdown! You won the game!")
         break
-    elif start.counter == 4 and sum(Plays.yards) < 25:
+    elif start.counter == 4 and sum(Plays.yards) < 10:
         print("Turnover on downs. You lost the game")
         exit()
     else:
